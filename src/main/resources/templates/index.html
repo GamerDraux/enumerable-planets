@@ -5,10 +5,29 @@
     <title>Enumerable Planets</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 </head>
 <body>
 <h1>Pick a planet:</h1>
-
+<table id="printableArea"
+        class="table table-striped table-bordered table-hover" >
+   <caption>List of planets and vital information</caption>
+    <thead class="thead-dark">
+        <tr>
+            <th>Planet Name</th>
+            <th>Planet Year Length</th>
+            <th>Average Surface Temp</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="planet : ${planets}">
+            <td th:text="${planet.getName()}"></td>
+            <td th:text="${planet.getYearLength()}"></td>
+            <td th:text="${planet.getAvgTemp()}+' F&deg'"></td>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>
